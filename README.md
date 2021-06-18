@@ -35,6 +35,8 @@ flask run --host=0.0.0.0
 
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+![image](https://user-images.githubusercontent.com/25299400/122582640-ff6cbf00-d075-11eb-8c10-4558d1765177.png)
+
 ## Components
 
 Current Web UI uses 3 major components:
