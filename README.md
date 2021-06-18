@@ -26,9 +26,9 @@ npm i
 
 ## Run the flask app to enable web service. This needs to be done from CollarKafka Repository collar_kafka cloned directory.
 ```
-      git clone 'https://github.com/chhabrabhishek/collar_kafka'
-      export FLASK_APP=servejson
-      flask run --host=0.0.0.0
+git clone 'https://github.com/chhabrabhishek/collar_kafka'
+export FLASK_APP=servejson
+flask run --host=0.0.0.0
 ```
 
 ## Running the app
