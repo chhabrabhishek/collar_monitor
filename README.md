@@ -19,14 +19,14 @@ Super simple Angular app with 1 module and 2 routes. This is a minor variation o
 
 ## Get the Code
 ```
-git clone '' collarMonitor
-cd collarMonitor
+git clone 'https://github.com/chhabrabhishek/collar_monitor'
+cd collar_monitor
 npm i
 ```
 
-## Run the flask app to enable web service. This needs to be done from CollarKafka Repository collar_kafka
+## Run the flask app to enable web service. This needs to be done from CollarKafka Repository collar_kafka cloned directory.
 ```
-      
+      git clone 'https://github.com/chhabrabhishek/collar_kafka'
       export FLASK_APP=servejson
       flask run --host=0.0.0.0
 ```
