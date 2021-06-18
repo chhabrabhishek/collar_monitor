@@ -1,0 +1,36 @@
+<app-title (valueChange)="onToggle($event)"></app-title>
+<div fxFlex="100" class="map-full-card-content">
+    <agm-map 
+        class="map"
+        [latitude]="location.latitude" 
+        [longitude]="location.longitude"
+        [zoom]="location.zoom">
+        <agm-marker 
+            [latitude]="location.marker.lat" 
+            [longitude]="location.marker.long"
+            [iconUrl]="location.icon"
+            [animation]="this.animate"
+            (markerClick)="onMarkerClicked(location.marker)">
+        </agm-marker>
+        <agm-marker *ngFor="let marker of staticMarkers"
+            [latitude]="marker.lat" 
+            [longitude]="marker.long"
+            [iconUrl]="marker.icon"
+            [animation]="isDeerOrElephant(marker)"
+            (markerClick)="onMarkerClicked(marker)">
+        </agm-marker>
+        <!-- <Danger Zone> -->
+        <agm-circle [latitude]="redCircleLat" [longitude]="redCircleLong" 
+            [radius]=circleRadius [fillColor]="'red'" [fillOpacity]="0.3" [circleDraggable]="false" [editable]="false">
+        </agm-circle>
+        <!-- Farm Zone -->
+        <agm-circle [latitude]="greenCircleLat" [longitude]="greenCircleLong" 
+            [radius]=circleRadius [fillColor]="'cyan'" [fillOpacity]="0.3" [circleDraggable]="false" [editable]="false">
+        </agm-circle>
+        <!-- Static Danger Zone -->
+        <agm-circle [latitude]=28.654169 [longitude]=77.272212 
+            [radius]=50 [fillColor]="'red'" [fillOpacity]="0.3" [circleDraggable]="false" [editable]="false">
+        </agm-circle>
+    </agm-map>
+</div>
+<app-actions *ngIf="showAnimalStatus" [animal]="selectedAnimal" [dangerCategories]="dangerCategory"></app-actions>

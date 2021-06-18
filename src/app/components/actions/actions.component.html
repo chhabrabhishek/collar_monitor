@@ -1,0 +1,32 @@
+<mat-card class="status-card">
+    <mat-card-header>
+        <mat-card-title>{{animal.name}}</mat-card-title>
+        <mat-card-subtitle style="color: black;">Status and Vitals</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content style="padding-left: 18px; color: black;"> 
+        Current Temperature : {{animal.temp}}° Fahrenheit
+        <br>
+        {{animal.suitedHabitat}}
+        <br>
+        <h5 class="blink_me" *ngIf="animal.isInDanger" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: red;">  
+            <span *ngFor="let danger of dangerCategories">
+                {{danger}}
+                <br>
+            </span>
+        </h5>
+        <button *ngIf="animal.isInDanger" (click)="informAuthorities()" mat-raised-button color="warn">Inform Authorities</button>
+        <span *ngIf="isDeer(animal)">
+            <h5 class="blink_me"  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: red;">
+                The Animal is in the Proximity of a Predator.
+            </h5>
+            <button mat-raised-button (click)="informAuthorities()" color="warn">Inform Authorities</button>
+        </span>
+        <span *ngIf="isElephant(animal)">
+            <h5 class="blink_me"  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: red;">
+                Current Climate Conditions are not suitable for the Animal
+            </h5>
+            <button mat-raised-button (click)="informAuthorities()" color="warn">Inform Authorities</button>
+        </span>
+    </mat-card-content>
+</mat-card>
+
